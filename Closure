@@ -1,0 +1,18 @@
+
+Closure---
+
+Closure gives us the access to an outer function scope from an inner function and the closures are created every time a function is created, at function creation time.
+
+const arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    console.log('Index: ' + i + ', element: ' + arr[i]);
+	
+  }, 3000);
+}
+
+Here, setTimeOut function in self invoking function.The setTimeout function creates a function that has access to its outer scope, which is the for loop with index i.
+The function is executed and prints the value of i, and at the end of the loop is at 4 because it cycles through 0, 1, 2, 3, 4
+and the loop finally stops at 4.arr[4] does not exist, which is why you get undefined.
+
+
